@@ -72,12 +72,11 @@ Complex Complex::operator+(float f ) const{
     return result_complex;
 }
 
-
 Complex Complex::operator+(int i ) const{
     Complex result_complex;
     
     result_complex.a = a + i; 
-    
+    result_complex.b = b;
 
     return result_complex;
 }
