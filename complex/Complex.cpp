@@ -31,12 +31,8 @@ void Complex::setReal( float r ){
 //========================================================
 float Complex::getReal( void )const{
 
-<<<<<<< HEAD
-    return a;
-=======
 
-    return 1.0;
->>>>>>> e8c5cf24819ada3b3bde4a59dd8a2cf24f3838ec
+    return a;
 }
 
 //========================================================
@@ -196,7 +192,7 @@ Complex Complex::operator/(const Complex &c ) const{
 Complex Complex::operator/(float f ) const{
     Complex result_complex;
     result_complex.a = a / f;
-    result_complex.b = n / f;
+    result_complex.b = b / f;
     return result_complex;
 }
 
