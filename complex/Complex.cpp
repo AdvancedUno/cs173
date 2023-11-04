@@ -199,8 +199,8 @@ Complex Complex::operator*(float f ) const{
 //========================================================
 Complex Complex::operator*(int i ) const{
     Complex result_complex;
-    //result_complex.a = a * c.a - b * c.b;
-    //result_complex.b = a * c.b + b * c.a;
+    result_complex.a = a * i;
+    result_complex.b = b * i;
     return result_complex;
 }
 
