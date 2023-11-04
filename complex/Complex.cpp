@@ -172,9 +172,7 @@ Complex Complex::operator-(int i ) const{
 // Parameters:
 //  Complex reference to c
 // Return value: 
-// New Rational object
-//-----------------------------
-// multiplication with float
+// New Complex object
 //-----------------------------
 // multiplication with int
 //========================================================
@@ -186,7 +184,12 @@ Complex Complex::operator*(const Complex &c ) const{
 }
 
 //========================================================
-
+// multiplication with float
+// Bach Nguyen
+// Parameters:
+//  Complex reference to c
+// Return value:
+//  New Complex object
 //========================================================
 Complex Complex::operator*(float f ) const{
     Complex result_complex;
@@ -311,11 +314,12 @@ bool   Complex::operator==( const Complex &c ) const{
 
 //========================================================
 // inequality operator
+// Bach Nguyen
+// Returns true if calling object != parameter,
+// false otherwise
 //========================================================
 bool   Complex::operator!=( const Complex &c ) const{
-
-
-    return true;
+    return a!=c.a || b!=c.b;
 }
 
 //========================================================
@@ -343,6 +347,14 @@ istream & operator>> ( istream &in, Complex &c ){
 
 //========================================================
 // overload << for cout
+// Bach Nguyen
+// Overload the ostream << operator so we can use cout
+// to print our Complex object
+// Parameters:
+//  ostream reference (current "ostream stack")
+//  Complex           (thing to add to the ostream)
+// Return value:
+//  new ostream reference (with our object added)
 //========================================================
 ostream & operator<< ( ostream &out, const Complex c ){
     if (c.b == 0)
