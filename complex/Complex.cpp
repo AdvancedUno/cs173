@@ -167,13 +167,13 @@ Complex Complex::operator*(int i ) const{
 // division operators
 //-----------------------------
 // division with Complex object
+//-----------------------------
+// division with float
 // Lam Do 
 // Parameters:
 //  Complex reference to c
 // Return value: 
 // New Rational object
-//-----------------------------
-// division with float
 //-----------------------------
 // division with int
 //========================================================
@@ -186,7 +186,8 @@ Complex Complex::operator/(const Complex &c ) const{
 
 Complex Complex::operator/(float f ) const{
     Complex result_complex;
-
+    result_complex.a = a / f;
+    result_complex.b = n / f;
     return result_complex;
 }
 
