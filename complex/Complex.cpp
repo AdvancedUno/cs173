@@ -70,23 +70,11 @@ Complex Complex::operator=( const Complex &c ){
 
 //========================================================
 // addition operators
-//-----------------------------
-// addition with Complex object
-//-----------------------------
-// addition with float
 // Lam Do 
 // Parameters:
 //  float f
 // Return value:
 //  New Rational Object
-//-----------------------------
-// addition with int
-// addition with Complex object
-// Bach Nguyen
-// Parameters:
-//  Complex reference to c
-// Return value: 
-// New Complex object
 //========================================================
 Complex Complex::operator+(const Complex &c ) const{
     Complex result_complex;
@@ -103,6 +91,15 @@ Complex Complex::operator+(float f ) const{
     return result_complex;
 }
 
+//========================================================
+// addition with int
+// addition with Complex object
+// Bach Nguyen
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Complex object
+//========================================================
 Complex Complex::operator+(int i ) const{
     Complex result_complex;
     
@@ -113,19 +110,8 @@ Complex Complex::operator+(int i ) const{
 }
 //========================================================
 // subtraction operators
-//-----------------------------
 // subtraction with Complex object
 // Lam Do 
-// Parameters:
-//  Complex reference to c
-// Return value: 
-// New Complex object
-//-----------------------------
-// subtraction with float
-//-----------------------------
-// subtraction with int
-// subtraction with Complex object
-// Bach Nguyen
 // Parameters:
 //  Complex reference to c
 // Return value: 
@@ -138,7 +124,15 @@ Complex Complex::operator-(const Complex &c ) const{
     return result_complex;
 }
 
-
+//========================================================
+// subtraction with float
+// subtraction with Complex object
+// Bach Nguyen
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Complex object
+//========================================================
 Complex Complex::operator-(float f ) const{
     Complex result_complex;
     result_complex.a = a - f; 
@@ -148,6 +142,15 @@ Complex Complex::operator-(float f ) const{
 }
 
 
+//========================================================
+// subtraction with int
+// subtraction with Complex object
+// Bach Nguyen
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Complex object
+//========================================================
 Complex Complex::operator-(int i ) const{
     Complex result_complex;
 
@@ -178,7 +181,9 @@ Complex Complex::operator*(const Complex &c ) const{
     return result_complex;
 }
 
+//========================================================
 
+//========================================================
 Complex Complex::operator*(float f ) const{
     Complex result_complex;
 
@@ -189,6 +194,9 @@ Complex Complex::operator*(float f ) const{
 }
 
 
+//========================================================
+
+//========================================================
 Complex Complex::operator*(int i ) const{
     Complex result_complex;
     //result_complex.a = a * c.a - b * c.b;
@@ -198,11 +206,7 @@ Complex Complex::operator*(int i ) const{
 
 
 //========================================================
-// division operators
-//-----------------------------
 // division with Complex object
-//-----------------------------
-// division with float
 // Lam Do 
 // Parameters:
 //  Complex reference to c
@@ -217,7 +221,9 @@ Complex Complex::operator/(const Complex &c ) const{
     return result_complex;
 }
 
+//========================================================
 
+//========================================================
 Complex Complex::operator/(float f ) const{
     Complex result_complex;
     result_complex.a = a / f;
@@ -225,7 +231,9 @@ Complex Complex::operator/(float f ) const{
     return result_complex;
 }
 
+//========================================================
 
+//========================================================
 Complex Complex::operator/(int i ) const{
     Complex result_complex;
 
