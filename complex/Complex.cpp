@@ -15,6 +15,7 @@ using namespace std;
 
 
 
+//comment 
 //========================================================
 // setReal access method
 // 
@@ -29,11 +30,15 @@ void Complex::setReal( float r ){
 
 //========================================================
 // getReal access method
+// Lam Do
+// Returns real part of Complex object
+// Parameters: none
+// Return value: real as float
 //========================================================
 float Complex::getReal( void )const{
 
 
-    return 1.0;
+    return a;
 }
 
 //========================================================
@@ -65,6 +70,17 @@ Complex Complex::operator=( const Complex &c ){
 
 //========================================================
 // addition operators
+//-----------------------------
+// addition with Complex object
+//-----------------------------
+// addition with float
+// Lam Do 
+// Parameters:
+//  float f
+// Return value:
+//  New Rational Object
+//-----------------------------
+// addition with int
 //========================================================
 Complex Complex::operator+(const Complex &c ) const{
     Complex result_complex;
@@ -75,22 +91,37 @@ Complex Complex::operator+(const Complex &c ) const{
 
 Complex Complex::operator+(float f ) const{
     Complex result_complex;
-
+    result_complex.a = a + f;
+    result_complex.b = b;
     return result_complex;
 }
 
-
 Complex Complex::operator+(int i ) const{
     Complex result_complex;
+    
+    result_complex.a = a + i; 
+    result_complex.b = b;
 
     return result_complex;
 }
 //========================================================
 // subtraction operators
+//-----------------------------
+// subtraction with Complex object
+// Lam Do 
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Rational object
+//-----------------------------
+// subtraction with float
+//-----------------------------
+// addition with int
 //========================================================
 Complex Complex::operator-(const Complex &c ) const{
     Complex result_complex;
-
+    result_complex.a = a + c.a;
+    result_complex.b = b + c.b;
     return result_complex;
 }
 
@@ -110,10 +141,22 @@ Complex Complex::operator-(int i ) const{
 
 //========================================================
 // multiplication operators
+//-----------------------------
+// multiplication with Complex object
+// Lam Do 
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Rational object
+//-----------------------------
+// multiplication with float
+//-----------------------------
+// multiplication with int
 //========================================================
 Complex Complex::operator*(const Complex &c ) const{
     Complex result_complex;
-
+    result_complex.a = a * c.a - b * c.b;
+    result_complex.b = a * c.b + b * c.a;
     return result_complex;
 }
 
@@ -134,6 +177,17 @@ Complex Complex::operator*(int i ) const{
 
 //========================================================
 // division operators
+//-----------------------------
+// division with Complex object
+//-----------------------------
+// division with float
+// Lam Do 
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Rational object
+//-----------------------------
+// division with int
 //========================================================
 Complex Complex::operator/(const Complex &c ) const{
     Complex result_complex;
@@ -144,7 +198,8 @@ Complex Complex::operator/(const Complex &c ) const{
 
 Complex Complex::operator/(float f ) const{
     Complex result_complex;
-
+    result_complex.a = a / f;
+    result_complex.b = b / f;
     return result_complex;
 }
 
@@ -188,11 +243,12 @@ float Complex::abs( void )const{
 
 //========================================================
 // equality operator
+// Lam Do 
+// Returns true if calling object == parameter,
+// false otherwise
 //========================================================
 bool   Complex::operator==( const Complex &c ) const{
-
-
-    return true;
+    return a == c.a && b == c.b;
 }
 
 //========================================================
@@ -218,7 +274,10 @@ istream & operator>> ( istream &in, Complex &c ){
 // overload << for cout
 //========================================================
 ostream & operator<< ( ostream &out, const Complex c ){
-
+    if (c.b == 0)
+        out << c.a;
+    else 
+        out << c.a << "+" << c.b << "i";
     return out;
 }
 
