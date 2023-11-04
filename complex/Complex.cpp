@@ -12,10 +12,6 @@
 #include <cmath>
 using namespace std;
 
-
-
-
-//comment 
 //========================================================
 // setReal access method
 //========================================================
@@ -77,6 +73,9 @@ Complex Complex::operator+(float f ) const{
 
 Complex Complex::operator+(int i ) const{
     Complex result_complex;
+    
+    result_complex.a = a + i; 
+    
 
     return result_complex;
 }
