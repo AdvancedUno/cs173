@@ -17,7 +17,8 @@ using namespace std;
 //========================================================
 void Complex::setReal( float r ){
 
-
+    this->a = r;
+    return;
 }
 
 
@@ -30,7 +31,12 @@ void Complex::setReal( float r ){
 //========================================================
 float Complex::getReal( void )const{
 
+<<<<<<< HEAD
     return a;
+=======
+
+    return 1.0;
+>>>>>>> e8c5cf24819ada3b3bde4a59dd8a2cf24f3838ec
 }
 
 //========================================================
@@ -46,7 +52,7 @@ void Complex::setImag( float r){
 //========================================================
  float Complex::getImag( void ) const{
 
-    return 1.0;
+    return this->b;
  }
 
 //========================================================
@@ -89,6 +95,9 @@ Complex Complex::operator+(float f ) const{
 
 Complex Complex::operator+(int i ) const{
     Complex result_complex;
+    
+    result_complex.a = a + i; 
+    
 
     return result_complex;
 }
@@ -251,8 +260,18 @@ bool   Complex::operator!=( const Complex &c ) const{
 //========================================================
 // overload >> for cin
 //========================================================
+istream & operator>> ( istream &in, Complex &c ){
+
+    return in;
+}
+
 
 
 //========================================================
 // overload << for cout
 //========================================================
+ostream & operator<< ( ostream &out, const Complex c ){
+
+    return out;
+}
+
