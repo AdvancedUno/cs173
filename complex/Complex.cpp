@@ -284,11 +284,19 @@ Complex Complex::operator~( void ) const{
 
 //========================================================
 // abs
+// Bach Nguyen
+// Returns the distance from the origin to the complex
+// number on a complex plane
+// Parameters:
+//  None
+// Return value:
+//  Distance from the origin to the complex number on a
+//  complex plane as a float
 //========================================================
 float Complex::abs( void )const{
-
-
-    return 1.0;
+    float distance;
+    distance = sqrt(a*a + b*b);
+    return distance;
 }
 
 //========================================================
