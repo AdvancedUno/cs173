@@ -12,8 +12,14 @@
 #include <cmath>
 using namespace std;
 
+
+
+
+//comment 
 //========================================================
 // setReal access method
+// 
+// 
 //========================================================
 void Complex::setReal( float r ){
 
@@ -55,9 +61,11 @@ void Complex::setImag( float r){
 // assignment operator
 //========================================================
 Complex Complex::operator=( const Complex &c ){
-    Complex result_complex;
+    //Complex result_complex;
+    this->a = c.a;
+    this->b = c.b;
 
-    return result_complex;
+    return *this;
 }
 
 //========================================================
@@ -73,6 +81,12 @@ Complex Complex::operator=( const Complex &c ){
 //  New Rational Object
 //-----------------------------
 // addition with int
+// addition with Complex object
+// Bach Nguyen
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Complex object
 //========================================================
 Complex Complex::operator+(const Complex &c ) const{
     Complex result_complex;
@@ -104,11 +118,17 @@ Complex Complex::operator+(int i ) const{
 // Parameters:
 //  Complex reference to c
 // Return value: 
-// New Rational object
+// New Complex object
 //-----------------------------
 // subtraction with float
 //-----------------------------
-// addition with int
+// subtraction with int
+// subtraction with Complex object
+// Bach Nguyen
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Complex object
 //========================================================
 Complex Complex::operator-(const Complex &c ) const{
     Complex result_complex;
@@ -128,6 +148,9 @@ Complex Complex::operator-(float f ) const{
 Complex Complex::operator-(int i ) const{
     Complex result_complex;
 
+    result_complex.a = a - i; 
+    result_complex.b = b;
+
     return result_complex;
 }
 
@@ -139,9 +162,15 @@ Complex Complex::operator-(int i ) const{
 // Parameters:
 //  Complex reference to c
 // Return value: 
-// New Rational object
+// New Complex object
 //-----------------------------
 // multiplication with float
+// multiplication with Complex object
+// Bach Nguyen
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Complex object
 //-----------------------------
 // multiplication with int
 //========================================================
@@ -155,6 +184,9 @@ Complex Complex::operator*(const Complex &c ) const{
 
 Complex Complex::operator*(float f ) const{
     Complex result_complex;
+
+    result_complex.a = a * f;
+    result_complex.b = b * f;
 
     return result_complex;
 }
@@ -262,16 +294,6 @@ bool   Complex::operator!=( const Complex &c ) const{
 //  new istream reference (with our object removed)
 //========================================================
 istream & operator>> ( istream &in, Complex &c ){
-    string s;
-    in >> s;
-    int spot_plus = s.find('+');
-    int spot_i = s.find('i');
-    string a_str = s.substr(0,spot_plus);
-    string b_str = s.substr(spot_plus+1,spot_i);
-
-    c.a = stof(a_str);
-    c.b = stof(b_str);
-    return in;
 }
 
 
