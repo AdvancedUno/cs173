@@ -43,10 +43,14 @@ float Complex::getReal( void )const{
 
 //========================================================
 // setImag
+// Bach Nguyen
+// Sets the imaginary part of the complex number
+// Parameters:
+//  float r
+// Return value: none
 //========================================================
 void Complex::setImag( float r){
-
-  
+    b = r;
 }
 
 //========================================================
