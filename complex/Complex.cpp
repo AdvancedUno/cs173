@@ -12,8 +12,14 @@
 #include <cmath>
 using namespace std;
 
+
+
+
+//comment 
 //========================================================
 // setReal access method
+// 
+// 
 //========================================================
 void Complex::setReal( float r ){
 
@@ -55,9 +61,11 @@ void Complex::setImag( float r){
 // assignment operator
 //========================================================
 Complex Complex::operator=( const Complex &c ){
-    Complex result_complex;
+    //Complex result_complex;
+    this->a = c.a;
+    this->b = c.b;
 
-    return result_complex;
+    return *this;
 }
 
 //========================================================
