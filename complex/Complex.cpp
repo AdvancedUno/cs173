@@ -214,7 +214,10 @@ istream & operator>> ( istream &in, Complex &c ){
 // overload << for cout
 //========================================================
 ostream & operator<< ( ostream &out, const Complex c ){
-
+    if (c.b == 0)
+        out << c.a;
+    else 
+        out << c.a << "+" << c.b << "i";
     return out;
 }
 
