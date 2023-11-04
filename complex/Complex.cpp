@@ -162,9 +162,15 @@ Complex Complex::operator-(int i ) const{
 // Parameters:
 //  Complex reference to c
 // Return value: 
-// New Rational object
+// New Complex object
 //-----------------------------
 // multiplication with float
+// multiplication with Complex object
+// Bach Nguyen
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Complex object
 //-----------------------------
 // multiplication with int
 //========================================================
@@ -178,6 +184,9 @@ Complex Complex::operator*(const Complex &c ) const{
 
 Complex Complex::operator*(float f ) const{
     Complex result_complex;
+
+    result_complex.a = a * f;
+    result_complex.b = b * f;
 
     return result_complex;
 }
