@@ -206,23 +206,31 @@ Complex Complex::operator*(int i ) const{
 
 
 //========================================================
+// division with Complex
 // division with Complex object
-// Lam Do 
+// Bach Nguyen
 // Parameters:
 //  Complex reference to c
 // Return value: 
 // New Rational object
-//-----------------------------
-// division with int
 //========================================================
 Complex Complex::operator/(const Complex &c ) const{
     Complex result_complex;
+
+    result_complex.a = (a * c.a + b * c.b) / (c.a * c.a + c.b * c.b);
+    result_complex.b = (b * c.a - a * c.b) / (c.a * c.a + c.b * c.b);
 
     return result_complex;
 }
 
 //========================================================
-
+// division with float
+// division with Complex object
+// Lam Do
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Rational object
 //========================================================
 Complex Complex::operator/(float f ) const{
     Complex result_complex;
@@ -232,7 +240,13 @@ Complex Complex::operator/(float f ) const{
 }
 
 //========================================================
-
+// division with int
+// division with Complex object
+// Lam Do
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Rational object
 //========================================================
 Complex Complex::operator/(int i ) const{
     Complex result_complex;
