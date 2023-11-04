@@ -254,9 +254,23 @@ bool   Complex::operator!=( const Complex &c ) const{
 
 //========================================================
 // overload >> for cin
+// Lam Do 
+// Parameters:
+// 	istream reference (current "istream stack")
+//  Complex 		  ( thing to parse from the istream )
+// Return value:
+//  new istream reference (with our object removed)
 //========================================================
 istream & operator>> ( istream &in, Complex &c ){
+    string s;
+    in >> s;
+    int spot_plus = s.find('+');
+    int spot_i = s.find('i');
+    string a_str = s.substr(0,spot_plus);
+    string b_str = s.substr(spot_plus+1,spot_i);
 
+    c.a = stof(a_str);
+    c.b = stof(b_str);
     return in;
 }
 
