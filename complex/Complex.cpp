@@ -43,10 +43,14 @@ float Complex::getReal( void )const{
 
 //========================================================
 // setImag
+// Bach Nguyen
+// Sets the imaginary part of the complex number
+// Parameters:
+//  float r
+// Return value: none
 //========================================================
 void Complex::setImag( float r){
-
-  
+    b = r;
 }
 
 //========================================================
@@ -168,9 +172,7 @@ Complex Complex::operator-(int i ) const{
 // Parameters:
 //  Complex reference to c
 // Return value: 
-// New Rational object
-//-----------------------------
-// multiplication with float
+// New Complex object
 //-----------------------------
 // multiplication with int
 //========================================================
@@ -182,7 +184,12 @@ Complex Complex::operator*(const Complex &c ) const{
 }
 
 //========================================================
-
+// multiplication with float
+// Bach Nguyen
+// Parameters:
+//  Complex reference to c
+// Return value:
+//  New Complex object
 //========================================================
 Complex Complex::operator*(float f ) const{
     Complex result_complex;
@@ -207,23 +214,31 @@ Complex Complex::operator*(int i ) const{
 
 
 //========================================================
+// division with Complex
 // division with Complex object
-// Lam Do 
+// Bach Nguyen
 // Parameters:
 //  Complex reference to c
 // Return value: 
 // New Rational object
-//-----------------------------
-// division with int
 //========================================================
 Complex Complex::operator/(const Complex &c ) const{
     Complex result_complex;
+
+    result_complex.a = (a * c.a + b * c.b) / (c.a * c.a + c.b * c.b);
+    result_complex.b = (b * c.a - a * c.b) / (c.a * c.a + c.b * c.b);
 
     return result_complex;
 }
 
 //========================================================
-
+// division with float
+// division with Complex object
+// Lam Do
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Rational object
 //========================================================
 Complex Complex::operator/(float f ) const{
     Complex result_complex;
@@ -233,7 +248,13 @@ Complex Complex::operator/(float f ) const{
 }
 
 //========================================================
-
+// division with int
+// division with Complex object
+// Lam Do
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Rational object
 //========================================================
 Complex Complex::operator/(int i ) const{
     Complex result_complex;
@@ -276,11 +297,19 @@ Complex Complex::operator~( void ) const{
 
 //========================================================
 // abs
+// Bach Nguyen
+// Returns the distance from the origin to the complex
+// number on a complex plane
+// Parameters:
+//  None
+// Return value:
+//  Distance from the origin to the complex number on a
+//  complex plane as a float
 //========================================================
 float Complex::abs( void )const{
-
-
-    return 1.0;
+    float distance;
+    distance = sqrt(a*a + b*b);
+    return distance;
 }
 
 //========================================================
@@ -295,11 +324,12 @@ bool   Complex::operator==( const Complex &c ) const{
 
 //========================================================
 // inequality operator
+// Bach Nguyen
+// Returns true if calling object != parameter,
+// false otherwise
 //========================================================
 bool   Complex::operator!=( const Complex &c ) const{
-
-
-    return true;
+    return a!=c.a || b!=c.b;
 }
 
 //========================================================
@@ -327,6 +357,14 @@ istream & operator>> ( istream &in, Complex &c ){
 
 //========================================================
 // overload << for cout
+// Bach Nguyen
+// Overload the ostream << operator so we can use cout
+// to print our Complex object
+// Parameters:
+//  ostream reference (current "ostream stack")
+//  Complex           (thing to add to the ostream)
+// Return value:
+//  new ostream reference (with our object added)
 //========================================================
 ostream & operator<< ( ostream &out, const Complex c ){
     if (c.b == 0)
