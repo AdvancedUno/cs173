@@ -79,7 +79,7 @@ Complex Complex::operator=( const Complex &c ){
 Complex Complex::operator+(const Complex &c ) const{
     Complex result_complex;
     result_complex.a = a + c.a;
-    result_complex.b = c.b;
+    result_complex.b = b + c.b;
     return result_complex;
 }
 
@@ -189,6 +189,7 @@ Complex Complex::operator*(float f ) const{
 
     result_complex.a = a * f;
     result_complex.b = b * f;
+    
 
     return result_complex;
 }
@@ -248,8 +249,16 @@ Complex Complex::operator/(int i ) const{
 //========================================================
 Complex Complex::operator^( int p ) const{
     Complex result_complex;
-    // result_complex.a = ;
-    // result_complex.b = b / i;
+    result_complex.a = a;
+    result_complex.b = b;
+    for(int i = 0; i < p; i++){
+        result_complex = result_complex*result_complex;
+    }
+
+
+    
+    // result_complex.a = a * a - b * b;
+    // result_complex.b = a * b + b * a;
 
     return result_complex;
 }
@@ -259,7 +268,8 @@ Complex Complex::operator^( int p ) const{
 //========================================================
 Complex Complex::operator~( void ) const{
     Complex result_complex;
-
+    result_complex.a = -1 * a;
+    result_complex.b = b;
 
     return result_complex;
 }
