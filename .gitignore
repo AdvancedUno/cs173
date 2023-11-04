@@ -35,4 +35,10 @@
 *.vscode/
 *.vscode
 .vscode/
+*.o
+*.exe
+
+*
+!*.c
+!Makefile
 
