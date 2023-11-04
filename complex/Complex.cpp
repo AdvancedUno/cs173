@@ -88,12 +88,11 @@ Complex Complex::operator+(float f ) const{
     return result_complex;
 }
 
-
 Complex Complex::operator+(int i ) const{
     Complex result_complex;
     
     result_complex.a = a + i; 
-    
+    result_complex.b = b;
 
     return result_complex;
 }
@@ -267,7 +266,10 @@ istream & operator>> ( istream &in, Complex &c ){
 // overload << for cout
 //========================================================
 ostream & operator<< ( ostream &out, const Complex c ){
-
+    if (c.b == 0)
+        out << c.a;
+    else 
+        out << c.a << "+" << c.b << "i";
     return out;
 }
 
