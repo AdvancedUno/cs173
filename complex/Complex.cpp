@@ -269,17 +269,17 @@ Complex Complex::operator/(int i ) const{
 // exponentiation
 //========================================================
 Complex Complex::operator^( int p ) const{
-    Complex result_complex;
-    result_complex.a = a;
-    result_complex.b = b;
-    for(int i = 0; i < p; i++){
-        result_complex = result_complex*result_complex;
+    Complex result_complex(1,0);
+    if(p<= 0){
+        return result_complex;
     }
 
+    result_complex.a = this->a;
+    result_complex.b = this->b;
 
-    
-    // result_complex.a = a * a - b * b;
-    // result_complex.b = a * b + b * a;
+    for(int i = 0; i < p; i++){
+        result_complex = result_complex* (*this);
+    }
 
     return result_complex;
 }
@@ -289,8 +289,8 @@ Complex Complex::operator^( int p ) const{
 //========================================================
 Complex Complex::operator~( void ) const{
     Complex result_complex;
-    result_complex.a = -1 * a;
-    result_complex.b = b;
+    result_complex.a = a;
+    result_complex.b = -1*b;
 
     return result_complex;
 }
