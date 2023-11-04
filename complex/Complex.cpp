@@ -73,6 +73,12 @@ Complex Complex::operator=( const Complex &c ){
 //  New Rational Object
 //-----------------------------
 // addition with int
+// addition with Complex object
+// Bach Nguyen
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Complex object
 //========================================================
 Complex Complex::operator+(const Complex &c ) const{
     Complex result_complex;
@@ -104,11 +110,17 @@ Complex Complex::operator+(int i ) const{
 // Parameters:
 //  Complex reference to c
 // Return value: 
-// New Rational object
+// New Complex object
 //-----------------------------
 // subtraction with float
 //-----------------------------
-// addition with int
+// subtraction with int
+// subtraction with Complex object
+// Bach Nguyen
+// Parameters:
+//  Complex reference to c
+// Return value: 
+// New Complex object
 //========================================================
 Complex Complex::operator-(const Complex &c ) const{
     Complex result_complex;
@@ -127,6 +139,9 @@ Complex Complex::operator-(float f ) const{
 
 Complex Complex::operator-(int i ) const{
     Complex result_complex;
+
+    result_complex.a = a - i; 
+    result_complex.b = b;
 
     return result_complex;
 }
