@@ -21,7 +21,8 @@ using namespace std;
 //========================================================
 void Complex::setReal( float r ){
 
-
+    this->a = r;
+    return;
 }
 
 
@@ -29,6 +30,7 @@ void Complex::setReal( float r ){
 // getReal access method
 //========================================================
 float Complex::getReal( void )const{
+
 
     return 1.0;
 }
@@ -46,7 +48,7 @@ void Complex::setImag( float r){
 //========================================================
  float Complex::getImag( void ) const{
 
-    return 1.0;
+    return this->b;
  }
 
 //========================================================
@@ -202,8 +204,18 @@ bool   Complex::operator!=( const Complex &c ) const{
 //========================================================
 // overload >> for cin
 //========================================================
+istream & operator>> ( istream &in, Complex &c ){
+
+    return in;
+}
+
 
 
 //========================================================
 // overload << for cout
 //========================================================
+ostream & operator<< ( ostream &out, const Complex c ){
+
+    return out;
+}
+
