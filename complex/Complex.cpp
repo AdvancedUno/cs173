@@ -15,11 +15,13 @@ using namespace std;
 
 
 
-//comment 
+
 //========================================================
-// setReal access method
-// 
-// 
+// setReal
+// EunHo Lee
+// Set real part of Complex object
+// Parameters: none
+// Return value: None
 //========================================================
 void Complex::setReal( float r ){
 
@@ -55,14 +57,24 @@ void Complex::setImag( float r){
 
 //========================================================
 // getImag
+// Lam Do
+// Returns Imaginary part of Complex object
+// Parameters: none
+// Return value: Imaginary as float
 //========================================================
  float Complex::getImag( void ) const{
 
     return this->b;
  }
 
+
 //========================================================
 // assignment operator
+// EunHo Lee
+// Parameters:
+// Complex reference to object
+// Return value:
+// Currnet object
 //========================================================
 Complex Complex::operator=( const Complex &c ){
     //Complex result_complex;
@@ -76,7 +88,7 @@ Complex Complex::operator=( const Complex &c ){
 // addition operators
 // Lam Do 
 // Parameters:
-//  float f
+//  Complex reference to object
 // Return value:
 //  New Rational Object
 //========================================================
@@ -87,7 +99,14 @@ Complex Complex::operator+(const Complex &c ) const{
     return result_complex;
 }
 
-
+//========================================================
+// addition operators
+// EunHo Lee
+// Parameters:
+//  float f
+// Return value:
+//  New Rational Object
+//========================================================
 Complex Complex::operator+(float f ) const{
     Complex result_complex;
     result_complex.a = a + f;
@@ -203,7 +222,12 @@ Complex Complex::operator*(float f ) const{
 
 
 //========================================================
-
+// multiplication with int
+// EunHo Lee
+// Parameters:
+//  Complex reference to c
+// Return value:
+//  New Complex object
 //========================================================
 Complex Complex::operator*(int i ) const{
     Complex result_complex;
@@ -267,6 +291,11 @@ Complex Complex::operator/(int i ) const{
 
 //========================================================
 // exponentiation
+// EunHo Lee
+// Parameters:
+// int power value
+// Return value: 
+// New Rational object
 //========================================================
 Complex Complex::operator^( int p ) const{
     Complex result_complex(1,0);
@@ -284,8 +313,14 @@ Complex Complex::operator^( int p ) const{
     return result_complex;
 }
 
+
 //========================================================
 // operator~
+// EunHo Lee
+// Parameters:
+// None
+// Return value: 
+// New Rational object
 //========================================================
 Complex Complex::operator~( void ) const{
     Complex result_complex;
