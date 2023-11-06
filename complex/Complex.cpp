@@ -304,7 +304,7 @@ Complex Complex::operator^( int p ) const{
     if(p<0){
         float denominator = pow(result_complex.a, 2) + pow(result_complex.b, 2);
         result_complex.a = result_complex.a / denominator;
-        result_complex.b = -1*result_complex.a / denominator;
+        result_complex.b = -1*result_complex.b / denominator;
     }
 
 

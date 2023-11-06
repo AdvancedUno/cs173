@@ -9,8 +9,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Complex.h"
-
-//#include <complex>   
+#include <complex>   
 
 int main ( void )
 {
@@ -19,6 +18,11 @@ int main ( void )
     cout << "c1 = " << c1 << endl;
     cout << "c2 = " << c2 << endl;
     cout << "c3 = " << c3 << endl;
+
+    std::complex<float> c6(3.1,-1);
+
+    cout << "c6 = " << pow(c6,-3) << endl;
+
 
     // addition tests
     c3 = c1 + c2;
