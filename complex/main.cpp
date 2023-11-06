@@ -15,11 +15,7 @@
 int main ( void )
 {
     // basic constructor tests
-    Complex c1(4,2), c2(3.1,-1), c3;
-
-    //std::complex<float> c4(4,2), c5(3.1,-1), c6;
-
-
+    Complex c1(4,2), c2(3.1,-1), c3, c4, c5;
     cout << "c1 = " << c1 << endl;
     cout << "c2 = " << c2 << endl;
     cout << "c3 = " << c3 << endl;
@@ -52,7 +48,7 @@ int main ( void )
     cout << "c3 = c1*5 = " << c3 << endl;
 
     c3 = c1 * float(2.5);
-    cout << "c3 = c1*5 = " << c3 << endl;
+    cout << "c3 = c1*2.5 = " << c3 << endl;
 
     // conjugate test
     c3 = ~c1;
@@ -83,6 +79,17 @@ int main ( void )
     cout << "Enter c3: ";
     cin >> c3;
     cout << c3 << endl;
+
+    // cin >> test
+    cout << "Enter c4: ";
+    cin >> c4;
+    cout << c4 << endl;
+
+    // cin >> test
+    cout << "Enter c5: ";
+    cin >> c5;
+    cout << c5 << endl;
+
 
     return 0;
 }
