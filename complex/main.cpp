@@ -9,7 +9,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Complex.h"
-#include <complex>   
 
 int main ( void )
 {
@@ -19,9 +18,7 @@ int main ( void )
     cout << "c2 = " << c2 << endl;
     cout << "c3 = " << c3 << endl;
 
-    std::complex<float> c6(3.1,-1);
 
-    cout << "c6 = " << pow(c6,-3) << endl;
 
 
     // addition tests
@@ -75,9 +72,12 @@ int main ( void )
     c3 = c1^0;
     cout << c1 << "^" << 0 << " = " << c3 << endl;
 
+    c3 = c1^(-2);
+    cout << c1 << "^" << -2 << " = " << c3 << endl;
+
     // abs test
     cout << "c1.abs() = " << c1.abs() << endl;
-    cout << "c2.abs() = " << c1.abs() << endl;
+    cout << "c2.abs() = " << c2.abs() << endl;
 
     // cin >> test
     cout << "Enter c3: ";
