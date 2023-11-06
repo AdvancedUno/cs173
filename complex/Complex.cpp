@@ -95,6 +95,7 @@ Complex Complex::operator+(const Complex &c ) const{
 
 //========================================================
 // addition with float
+// This function returns the addition of a complex number and a float
 // EunHo Lee
 // Parameters:
 //  float f
@@ -211,6 +212,7 @@ Complex Complex::operator*(float f ) const{
 
 //========================================================
 // multiplication with int
+// This function returns the product of the complex number and int
 // EunHo Lee
 // Parameters:
 //  int i
@@ -277,6 +279,7 @@ Complex Complex::operator/(int i ) const{
 //========================================================
 // exponentiation
 // EunHo Lee
+// This function will return the exponential number of the complex number
 // Parameters:
 // int power value
 // Return value: 
@@ -293,7 +296,7 @@ Complex Complex::operator^( int p ) const{
     result_complex.a = this->a;
     result_complex.b = this->b;
 
-    for(int i = 0; i < p; i++){
+    for(int i = 1; i < p; i++){
         result_complex = result_complex* (*this);
     }
 
