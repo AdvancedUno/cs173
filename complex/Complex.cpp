@@ -312,6 +312,7 @@ Complex Complex::operator^( int p ) const{
 //========================================================
 // operator~
 // EunHo Lee
+// This function return the conjugate of the complex number
 // Parameters:
 // None
 // Return value: 
@@ -374,8 +375,8 @@ bool   Complex::operator!=( const Complex &c ) const{
 istream & operator>> ( istream &in, Complex &c ){
     string s;
     in >> s;
-    string a_str;
-    string b_str;
+    string a_str= "";
+    string b_str = "";
 
     //without imaginary, only parse values to a
     if (s[s.size()-1] != 'i')
@@ -404,6 +405,13 @@ istream & operator>> ( istream &in, Complex &c ){
         if (i == 0)
             a_str = "0";
     }
+
+
+
+ 
+
+
+
     c.a = stof(a_str);
     c.b = stof(b_str);
     return in;

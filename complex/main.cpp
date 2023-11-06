@@ -10,10 +10,16 @@
 #include <stdlib.h>
 #include "Complex.h"
 
+//#include <complex>   
+
 int main ( void )
 {
     // basic constructor tests
     Complex c1(4,2), c2(3.1,-1), c3;
+
+    //std::complex<float> c4(4,2), c5(3.1,-1), c6;
+
+
     cout << "c1 = " << c1 << endl;
     cout << "c2 = " << c2 << endl;
     cout << "c3 = " << c3 << endl;
