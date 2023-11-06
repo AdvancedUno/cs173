@@ -394,6 +394,10 @@ istream & operator>> ( istream &in, Complex &c ){
                 }
         }
         b_str = s[i] + b_str;
+
+        //if there's no add or minus signs or if 
+        //there's nothing before add or minus sign
+        //set a to 0
         if (i == 0)
             a_str = "0";
     }
