@@ -296,7 +296,8 @@ Complex Complex::operator^( int p ) const{
     result_complex.a = this->a;
     result_complex.b = this->b;
 
-    for(int i = 1; i < p; i++){
+
+    for(int i = 1; i < std::abs(p); i++){
         result_complex = result_complex* (*this);
     }
 
