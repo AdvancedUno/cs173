@@ -10,8 +10,6 @@
 #include <stdlib.h>
 #include "Complex.h"
 
-//#include <complex>   
-
 int main ( void )
 {
     // basic constructor tests
@@ -70,6 +68,9 @@ int main ( void )
 
     c3 = c1^0;
     cout << c1 << "^" << 0 << " = " << c3 << endl;
+
+    c3 = c1^(-2);
+    cout << c1 << "^" << -2 << " = " << c3 << endl;
 
     // abs test
     cout << "c1.abs() = " << c1.abs() << endl;
