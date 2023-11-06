@@ -416,6 +416,10 @@ istream & operator>> ( istream &in, Complex &c ){
 ostream & operator<< ( ostream &out, const Complex c ){
     if (c.b == 0)
         out << c.a;
+    else if (c.a == 0)
+        out << c.b << "i";
+    else if (c.b < 0)
+        out << c.a << c.b << "i";
     else 
         out << c.a << "+" << c.b << "i";
     return out;
