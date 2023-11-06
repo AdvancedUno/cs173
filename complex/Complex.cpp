@@ -284,16 +284,26 @@ Complex Complex::operator/(int i ) const{
 //========================================================
 Complex Complex::operator^( int p ) const{
     Complex result_complex(1,0);
-    if(p<= 0){
+    if(p== 0){
         return result_complex;
     }
 
+
+    
     result_complex.a = this->a;
     result_complex.b = this->b;
 
     for(int i = 0; i < p; i++){
         result_complex = result_complex* (*this);
     }
+
+
+    if(p<0){
+        float denominator = pow(result_complex.a, 2) + pow(result_complex.b, 2);
+        result_complex.a = result_complex.a / denominator;
+        result_complex.b = -1*result_complex.a / denominator;
+    }
+
 
     return result_complex;
 }

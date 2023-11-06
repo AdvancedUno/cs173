@@ -22,7 +22,7 @@ int main ( void )
     c3 = c1 + c2;
     cout << "c3 = c1+c2 = " << c3 << endl;
 
-    c3 = c1 + 2.5;
+    c3 = c1 + float(2.5);
     cout << "c3 = c1+2.5 = " << c3 << endl;
 
     c3 = c1 + 7;
@@ -32,7 +32,7 @@ int main ( void )
     c3 = c1 - c2;
     cout << "c3 = c1-c2 = " << c3 << endl;
 
-    c3 = c1 - 2.5;
+    c3 = c1 - float(2.5);
     cout << "c3 = c1-2.5 = " << c3 << endl;
 
     c3 = c1 - 7;
@@ -45,7 +45,7 @@ int main ( void )
     c3 = c1 * 5;
     cout << "c3 = c1*5 = " << c3 << endl;
 
-    c3 = c1 * 2.5;
+    c3 = c1 * float(2.5);
     cout << "c3 = c1*5 = " << c3 << endl;
 
     // conjugate test
@@ -56,7 +56,7 @@ int main ( void )
     c3 = c1 / c2;
     cout << "c3 = c1/c2 = " << c3 << endl;
 
-    c3 = c1 / 2.5;
+    c3 = c1 / float(2.5);
     cout << "c3 = c1/2.5 = " << c3 << endl;
 
     c3 = c1 / 5;
