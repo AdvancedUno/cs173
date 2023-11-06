@@ -385,9 +385,10 @@ istream & operator>> ( istream &in, Complex &c ){
         return in;
     }
 
-    //with imaginary, traverse backwards, check for plus and minus sign
+    //with imaginary, traverse backwards
     for (int i = s.size()-2; i >= 0; i--)
     {
+        //look for digit right before + and - then add everything before that to a
         if (s[i+1] == '+' || s[i+1] == '-')
         {
             if (s[i] != '+' && s[i] != '-')
@@ -398,18 +399,18 @@ istream & operator>> ( istream &in, Complex &c ){
         }
         b_str = s[i] + b_str;
 
-        //if there's no add or minus signs or if 
-        //there's nothing before add or minus sign
-        //set a to 0
+        //if there's nothing before add or minus sign, set a to 0
         if (i == 0)
             a_str = "0";
     }
 
+    //remove plus signs
     if (a_str.find('+') != string::npos) 
         a_str.erase(a_str.find('+'),1);
     if (b_str.find('+') != string::npos)   
         b_str.erase(b_str.find('+'),1);
 
+    //convert string to float
     c.a = stof(a_str);
     c.b = stof(b_str);
     return in;
