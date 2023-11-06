@@ -378,9 +378,9 @@ istream & operator>> ( istream &in, Complex &c ){
     //with imaginary, traverse backwards, check for plus and minus sign
     for (int i = s.size()-2; i >= 0; i--)
     {
-        if (s[i+1] == '+' or s[i+1] == '-')
+        if (s[i+1] == '+' || s[i+1] == '-')
         {
-            if (s[i] != '+' and s[i] != '-')
+            if (s[i] != '+' && s[i] != '-')
                 {
                     a_str = s.substr(0,i+1);
                     break;
