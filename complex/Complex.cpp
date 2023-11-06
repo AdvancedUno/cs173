@@ -404,6 +404,12 @@ istream & operator>> ( istream &in, Complex &c ){
         if (i == 0)
             a_str = "0";
     }
+
+    if (a_str.find('+') != string::npos) 
+        a_str.erase(a_str.find('+'),1);
+    if (b_str.find('+') != string::npos)   
+        b_str.erase(b_str.find('+'),1);
+
     c.a = stof(a_str);
     c.b = stof(b_str);
     return in;
