@@ -12,10 +12,6 @@
 #include <cmath>
 using namespace std;
 
-
-
-
-
 //========================================================
 // setReal
 // EunHo Lee
@@ -29,7 +25,6 @@ void Complex::setReal( float r ){
     return;
 }
 
-
 //========================================================
 // getReal access method
 // Lam Do
@@ -38,8 +33,6 @@ void Complex::setReal( float r ){
 // Return value: real as float
 //========================================================
 float Complex::getReal( void )const{
-
-
     return a;
 }
 
@@ -142,8 +135,8 @@ Complex Complex::operator+(int i ) const{
 //========================================================
 Complex Complex::operator-(const Complex &c ) const{
     Complex result_complex;
-    result_complex.a = a + c.a;
-    result_complex.b = b + c.b;
+    result_complex.a = a - c.a;
+    result_complex.b = b - c.b;
     return result_complex;
 }
 

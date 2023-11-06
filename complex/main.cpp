@@ -22,6 +22,9 @@ int main ( void )
     c3 = c1 + c2;
     cout << "c3 = c1+c2 = " << c3 << endl;
 
+    c3 = c1 + 2.5;
+    cout << "c3 = c1+2.5 = " << c3 << endl;
+
     c3 = c1 + 7;
     cout << "c3 = c1+7 = " << c3 << endl;
 
@@ -29,9 +32,21 @@ int main ( void )
     c3 = c1 - c2;
     cout << "c3 = c1-c2 = " << c3 << endl;
 
+    c3 = c1 - 2.5;
+    cout << "c3 = c1-2.5 = " << c3 << endl;
+
+    c3 = c1 - 7;
+    cout << "c3 = c1-2.5 = " << c3 << endl;
+
     // multiplication
     c3 = c1 * c2;
     cout << "c3 = c1*c2 = " << c3 << endl;
+
+    c3 = c1 * 5;
+    cout << "c3 = c1*5 = " << c3 << endl;
+
+    c3 = c1 * 2.5;
+    cout << "c3 = c1*5 = " << c3 << endl;
 
     // conjugate test
     c3 = ~c1;
@@ -41,12 +56,22 @@ int main ( void )
     c3 = c1 / c2;
     cout << "c3 = c1/c2 = " << c3 << endl;
 
+    c3 = c1 / 2.5;
+    cout << "c3 = c1/2.5 = " << c3 << endl;
+
+    c3 = c1 / 5;
+    cout << "c3 = c1/5 = " << c3 << endl;
+
     // exponentiation test
     c3 = c1^3;
     cout << c1 << "^" << 3 << " = " << c3 << endl;
 
+    c3 = c1^0;
+    cout << c1 << "^" << 0 << " = " << c3 << endl;
+
     // abs test
     cout << "c1.abs() = " << c1.abs() << endl;
+    cout << "c2.abs() = " << c1.abs() << endl;
 
     // cin >> test
     cout << "Enter c3: ";
