@@ -71,7 +71,7 @@ int main ( void )
 
     // abs test
     cout << "c1.abs() = " << c1.abs() << endl;
-    cout << "c2.abs() = " << c1.abs() << endl;
+    cout << "c2.abs() = " << c2.abs() << endl;
 
     // cin >> test
     cout << "Enter c3: ";
